@@ -10,4 +10,3 @@ class Persona(BaseModel):
     puesto: str
     telefono: str
     email: str
-    fecha_actualizacion: str
