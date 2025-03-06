@@ -14,10 +14,10 @@ def get_personas():
 @router.post("/")
 def create_persona(persona: Persona):
     query = """
-    INSERT INTO personas (nombre, apellido_paterno, apellido_materno, puesto, telefono, email) 
-    VALUES (%s, %s, %s, %s, %s, %s)
+    INSERT INTO personas (nombre, apellido_paterno, apellido_materno, puesto, telefono, email, fecha_actualizacion) 
+    VALUES (%s, %s, %s, %s, %s, %s, %s)
     """
-    values = (persona.nombre, persona.apellido_paterno, persona.apellido_materno, persona.puesto, persona.telefono, persona.email)
+    values = (persona.nombre, persona.apellido_paterno, persona.apellido_materno, persona.puesto, persona.telefono, persona.email, persona.fecha_actualizacion)
     cursor = db.cursor()
     cursor.execute(query, values)
     db.commit()

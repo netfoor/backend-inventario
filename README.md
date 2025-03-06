@@ -14,9 +14,42 @@ Este proyecto utiliza FastAPI para crear una API y Docker para gestionar la base
 
 1. **Clonar el repositorio**:
 
-    https://github.com/netfoor/AppInventarios.git
+    ```sh
+    git clone https://github.com/netfoor/AppInventarios.git
+    cd AppInventarios
+    ```
 
-1. **Ejecutar el contenedor con la base de datos**:
+2. **Crear y activar un entorno virtual** (opcional pero recomendado):
 
-   docker-compose up --build
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # En Windows usa `venv\Scripts\activate`
+    ```
 
+3. **Instalar las dependencias**:
+
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. **Ejecutar el contenedor con la base de datos**:
+
+    ```sh
+    docker-compose up --build
+    ```
+
+5. **Iniciar la aplicación FastAPI**:
+
+    ```sh
+    fastapi dev main.py
+    ```
+
+6. **Acceder a la API**:
+
+    Abre tu navegador y ve a `http://localhost:8000` para ver la documentación interactiva de la API
+
+    Si deseas ver la base de datos puedes correrla en `http://localhost:8080` con las siguientes credenciales:
+
+    user: root
+    password: root
+    

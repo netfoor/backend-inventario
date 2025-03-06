@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import Optional
+from datetime import datetime
 
 # Modelo de Persona
 class Persona(BaseModel):
@@ -10,3 +11,4 @@ class Persona(BaseModel):
     puesto: str
     telefono: str
     email: str
+    fecha_actualizacion: Optional[datetime] = None
