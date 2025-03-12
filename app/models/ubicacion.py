@@ -1,9 +1,8 @@
-from pydantic import BaseModel
 from typing import Optional
+from pydantic import BaseModel, Field
 
-# Modelo de Ubicación
 class Ubicacion(BaseModel):
-    id: Optional[int] = None
+    id: Optional[int] = Field(default=None, alias="_id")
     edificio: str
     area: str
     departamento: str

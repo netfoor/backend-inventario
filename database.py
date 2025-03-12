@@ -1,10 +1,10 @@
-from fastapi import FastAPI
-import mysql.connector
+from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
-db = mysql.connector.connect(
-    host="localhost",  # Cambia 'db' a 'localhost'
-    user='root',
-    password='root',
-    database='inventario',
-    port=3308  # Puerto externo mapeado en docker-compose.yml
-)
+load_dotenv()
+db_url = os.getenv('DB_URL')
+
+client = MongoClient(db_url)
+
+db = client['Inventario']
